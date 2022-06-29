@@ -30,6 +30,8 @@ const actions = {
 
         if (result.successful)
             commit(types.mutations.clearDishes)
+
+        return result.successful
     },
     async [types.actions.upsertDish]({ commit }, dish) {
         const result = await dishApi.upsertDish(dish)
